@@ -1,0 +1,94 @@
+name: ForgeChat
+version: 1.0.0
+main: com.forge.chat.ForgeChat
+api-version: '26.3'
+author: Forge
+description: All-in-one chat suite — channels, private messages, mentions, moderation, anti-spam and rich formatting.
+commands:
+  ch:
+    description: Set your default chat channel.
+    usage: /ch <global|local|staff>
+    permission: forgechat.use
+  g:
+    description: Send a one-off message in global chat.
+    usage: /g <message>
+    permission: forgechat.use
+  l:
+    description: Send a one-off message in local chat.
+    usage: /l <message>
+    permission: forgechat.use
+  staff:
+    description: Send a one-off message in staff chat.
+    usage: /staff <message>
+    aliases: [sc]
+    permission: forgechat.staff
+  msg:
+    description: Send a private message.
+    usage: /msg <player> <message>
+    aliases: [tell, w]
+    permission: forgechat.use
+  r:
+    description: Reply to your last private message.
+    usage: /r <message>
+    permission: forgechat.use
+  ignore:
+    description: Ignore a player's private messages.
+    usage: /ignore <player>
+    permission: forgechat.use
+  unignore:
+    description: Stop ignoring a player.
+    usage: /unignore <player>
+    permission: forgechat.use
+  spy:
+    description: Toggle social-spy (see all private messages).
+    usage: /spy
+    permission: forgechat.spy
+  mute:
+    description: Mute a player, optionally timed.
+    usage: /mute <player> [time] [reason...]
+    permission: forgechat.mod
+  tempmute:
+    description: Temporarily mute a player.
+    usage: /tempmute <player> <time> [reason...]
+    permission: forgechat.mod
+  unmute:
+    description: Unmute a player.
+    usage: /unmute <player>
+    permission: forgechat.mod
+  slowmode:
+    description: Set per-channel slow mode in seconds (0 disables).
+    usage: /slowmode <global|local|staff> <seconds>
+    permission: forgechat.mod
+  fchat:
+    description: ForgeChat administration.
+    usage: /fchat reload
+    aliases: [forgechat]
+    permission: forgechat.admin
+permissions:
+  forgechat.use:
+    description: Basic chat usage.
+    default: true
+  forgechat.color:
+    description: Use MiniMessage formatting in chat messages.
+    default: true
+  forgechat.staff:
+    description: Access the staff channel.
+    default: op
+  forgechat.spy:
+    description: Use social-spy.
+    default: op
+  forgechat.mod:
+    description: Mute players and manage slow mode.
+    default: op
+  forgechat.mention.everyone:
+    description: Use @here and @everyone mentions.
+    default: op
+  forgechat.spam.bypass:
+    description: Bypass anti-spam checks.
+    default: op
+  forgechat.filter.bypass:
+    description: Bypass the word filter.
+    default: op
+  forgechat.admin:
+    description: Reload ForgeChat configuration.
+    default: op

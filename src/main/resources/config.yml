@@ -1,0 +1,107 @@
+# ForgeChat 1.0.0 — all text supports MiniMessage.
+# Placeholders: {tag} {name} {message} in channel formats;
+# {name} {group} {channel} {session} in hover-format.
+
+default-channel: global
+
+channels:
+  global:
+    tag: "<dark_gray>[<green>G</green>]</dark_gray> "
+    format: "{tag}{name}<dark_gray>:</dark_gray> {message}"
+  local:
+    tag: "<dark_gray>[<aqua>L</aqua>]</dark_gray> "
+    format: "{tag}{name}<dark_gray>:</dark_gray> {message}"
+    radius: 50.0
+  staff:
+    tag: "<dark_gray>[<red>S</red>]</dark_gray> "
+    format: "{tag}{name}<dark_gray>:</dark_gray> {message}"
+
+# First matching permission wins; the empty-permission entry is the fallback.
+groups:
+  - permission: "forgechat.group.admin"
+    label: "Admin"
+    prefix: "<red><bold>[Admin]</bold></red> "
+    name-format: "<red>{name}</red>"
+    suffix: ""
+  - permission: "forgechat.group.mod"
+    label: "Mod"
+    prefix: "<aqua>[Mod]</aqua> "
+    name-format: "<aqua>{name}</aqua>"
+    suffix: ""
+  - permission: ""
+    label: "Default"
+    prefix: ""
+    name-format: "<gray>{name}</gray>"
+    suffix: ""
+
+hover-format:
+  - "<yellow><bold>{name}</bold></yellow>"
+  - "<gray>Group:</gray> <white>{group}</white>"
+  - "<gray>Channel:</gray> <white>{channel}</white>"
+  - "<gray>Session:</gray> <white>{session}</white>"
+
+mentions:
+  enabled: true
+  # Vanilla sound key, e.g. entity.experience_orb_pickup or minecraft:entity.player.levelup
+  sound: entity.experience_orb_pickup
+  volume: 1.0
+  pitch: 1.6
+  highlight: "<yellow><bold>@{name}</bold></yellow>"
+
+antispam:
+  enabled: true
+  max-messages: 4
+  window-seconds: 5
+  max-repeat-chars: 5
+  caps-percent: 70
+  caps-min-length: 8
+  block-links: true
+  link-whitelist:
+    - "myserver.com"
+
+filter:
+  enabled: true
+  action: replace # replace | cancel
+  replacement: "***"
+  words:
+    - "badword"
+
+# Slow mode seconds per channel; managed with /slowmode.
+slowmode:
+  global: 0
+  local: 0
+  staff: 0
+
+pm:
+  format-to: "<gray>[<red>PM</red>]</gray> {sender}<gray>:</gray> {message}"
+  format-from: "<gray>[<red>PM</red>]</gray> <gray>to</gray> {recipient}<gray>:</gray> {message}"
+  format-spy: "<dark_gray>[SPY] {sender} -> {recipient}: {message}</dark_gray>"
+
+messages:
+  no-permission: "<red>You don't have permission to do that.</red>"
+  player-only: "<red>Only players can use this command.</red>"
+  player-not-found: "<red>Player not found: {name}</red>"
+  muted: "<red>You are muted ({remaining}): {reason}</red>"
+  muted-pm: "<red>You are muted and cannot send private messages ({remaining}).</red>"
+  muted-player: "<green>Muted {name} ({duration}): {reason}</green>"
+  you-are-muted: "<red>You have been muted ({duration}): {reason}</red>"
+  unmuted: "<green>Unmuted {name}.</green>"
+  you-are-unmuted: "<green>You have been unmuted.</green>"
+  not-muted: "<yellow>{name} is not muted.</yellow>"
+  slowmode: "<red>Slow mode is on: wait {seconds}s before chatting again.</red>"
+  slowmode-on: "<green>Slow mode for {channel}: {seconds}s.</green>"
+  slowmode-off: "<green>Slow mode disabled for {channel}.</green>"
+  spam-rate: "<red>You're sending messages too quickly.</red>"
+  spam-repeat: "<red>Too many repeated characters.</red>"
+  spam-caps: "<red>Too many capital letters.</red>"
+  spam-link: "<red>Links are not allowed in chat.</red>"
+  filtered: "<red>That message was blocked by the chat filter.</red>"
+  pm-ignored: "<red>That player is not accepting private messages.</red>"
+  no-reply-target: "<red>You have no one to reply to.</red>"
+  ignored: "<green>You are now ignoring {name}.</green>"
+  already-ignored: "<yellow>You are already ignoring {name}.</yellow>"
+  unignored: "<green>You are no longer ignoring {name}.</green>"
+  not-ignored: "<yellow>You are not ignoring {name}.</yellow>"
+  spy-on: "<green>Social-spy enabled.</green>"
+  spy-off: "<yellow>Social-spy disabled.</yellow>"
+  reloaded: "<green>ForgeChat configuration reloaded.</green>"
