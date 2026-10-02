@@ -128,4 +128,4 @@ Every package declares `@NotNullByDefault` (JetBrains annotations); sites where 
 
 ---
 
-<p align="center"><i>Part of the <a href="https://github.com/ChristopherIrwin">Forge</a> plugin suite — original implementations, zero dependencies.</i></p>
+<p align="center"><i>Part of the <a href="https://github.com/ForgePluginsMC">Forge</a> plugin suite — original implementations, zero dependencies.</i></p>
