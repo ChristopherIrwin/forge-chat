@@ -1,4 +1,21 @@
-# ForgeChat
+<p align="center">
+  <img src="assets/logo.webp" width="160" alt="ForgeChat logo">
+</p>
+
+<h1 align="center">ForgeChat</h1>
+
+<p align="center"><i>Channels, PMs, mentions, mutes, anti-spam, and rich MiniMessage formatting — the all-in-one chat suite.</i></p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/version-1.0.0-ff7b2e?style=for-the-badge" alt="version 1.0.0">
+  <img src="https://img.shields.io/badge/Paper-26.3-2f9e6e?style=for-the-badge" alt="Paper 26.3">
+  <img src="https://img.shields.io/badge/Java-25-f89820?style=for-the-badge" alt="Java 25">
+  <img src="https://img.shields.io/badge/3_channels-2563eb?style=for-the-badge" alt="3 channels">
+  <img src="https://img.shields.io/badge/14_commands-2563eb?style=for-the-badge" alt="14 commands">
+  <img src="https://img.shields.io/badge/dependencies-zero-6b7280?style=for-the-badge" alt="zero dependencies">
+</p>
+
+---
 
 An all-in-one chat suite for Paper servers: channels, private messages, mentions, moderation, anti-spam, and rich MiniMessage formatting. Original implementation, zero runtime dependencies beyond Paper itself.
 
@@ -106,3 +123,7 @@ Direct `javac` build — no Gradle daemon required. Requires JDK 25 (`~/workspac
 ## Code quality
 
 Every package declares `@NotNullByDefault` (JetBrains annotations); sites where `null` is a legitimate value are explicitly marked `@Nullable`. Null-safety is a documented contract, not a convention.
+
+---
+
+<p align="center"><i>Part of the <a href="https://github.com/ChristopherIrwin">Forge</a> plugin suite — original implementations, zero dependencies.</i></p>
