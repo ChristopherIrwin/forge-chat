@@ -15,6 +15,8 @@
   <img src="https://img.shields.io/badge/dependencies-zero-6b7280?style=for-the-badge" alt="zero dependencies">
 </p>
 
+<p align="center"><sub>Not affiliated with <a href="https://minecraftforge.net">MinecraftForge</a> — "Forge" is just a name.</sub></p>
+
 ---
 
 An all-in-one chat suite for Paper servers: channels, private messages, mentions, moderation, anti-spam, and rich MiniMessage formatting. Original implementation, zero runtime dependencies beyond Paper itself.
